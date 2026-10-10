@@ -142,27 +142,6 @@ a.card:hover .addr { color: var(--accent); }
   border-radius: 26px;
 }
 
-.soon {
-  align-self: start;
-  border-style: dashed;
-  background: transparent;
-}
-
-.soon h2 { margin-bottom: 8px; }
-
-.badge {
-  display: inline-block;
-  margin-bottom: 12px;
-  padding: 3px 10px;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--accent);
-  border: 1px solid rgba(124, 183, 255, 0.4);
-  border-radius: 999px;
-}
-
 footer {
   margin-top: 48px;
   font-size: 14px;
@@ -174,7 +153,11 @@ footer a:hover { color: var(--accent); }
 
 @media (min-width: 900px) {
   .grid { grid-template-columns: 1fr 1fr; gap: 24px; }
-  .featured { grid-column: 1 / -1; }
+  .featured, .wide { grid-column: 1 / -1; }
+  .wide { display: grid; grid-template-columns: 2fr 3fr; grid-template-rows: 1fr 1fr; }
+  .wide .phone { grid-area: 1 / 1 / 3 / 2; border-bottom: 0; border-right: 1px solid var(--line); }
+  .wide .head { grid-area: 1 / 2; align-self: end; flex-direction: column; align-items: flex-start; gap: 6px; padding: 0 32px 12px; border-bottom: 0; }
+  .wide .body { grid-area: 2 / 2; align-self: start; padding: 0 32px; max-width: 520px; }
   .shots { grid-template-columns: 1fr 1fr; }
   .shots img { border-bottom: 1px solid var(--line); }
   .shots img + img { border-left: 1px solid var(--line); }
